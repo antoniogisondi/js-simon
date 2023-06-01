@@ -7,13 +7,12 @@ function randonNumber(min, max){
 // CICLO LA FUNZIONE PER GENERARE 5 NUMERI RANDOM
 for( let i = 1; i <= 5; i++){
     let number = randonNumber(0,100)
-    console.log(number)
     let box = document.querySelector('.number')
-    box.innerHTML = `<p>${number}</p>`
+    box.innerHTML += ` ${number} `
     let message = document.querySelector('.message')
     setTimeout(function(){
         box.innerHTML = ''
-    },5000)   
+    },30000)   
     // ESEGUO IL PROMPT
        setTimeout(function(){
         let promptUser;
@@ -25,13 +24,15 @@ for( let i = 1; i <= 5; i++){
         }
     
         if(number == promptUser){
-            message.innerHTML += `Il tuo risultato: ${number} è corretto`
+            box.innerHTML += ` ${number} `
+            message.innerHTML += `Il tuo risultato: ${number} è corretto, `
         }
         else{
-            message.innerHTML += `Il tuo risultato: ${promptUser} non è corretto`
+            box.innerHTML += ` ${number} `
+            message.innerHTML += `Il tuo risultato: ${promptUser} non è corretto, `
         }
 
-    },5020)
+    },30020)
 }
 
 
